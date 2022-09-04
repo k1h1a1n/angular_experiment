@@ -1,62 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-// mat-form-field //input
-.mat-form-field-appearance-outline {
-    width: 250px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.mat-form-field-appearance-outline .mat-form-field-outline {
-    height: 42px;
-}
-
-.mat-form-field-subscript-wrapper {
-    margin-top: 6px;
-}
-
-.mat-form-field-label-wrapper {
-    top: -1.1em;
-    padding-top: 0.84375em;
-}
-
-.mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0.5em 0 1em 0;
-    line-height: 17px;
-}
-
-.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #bbbbbb;
-    box-shadow: 0px 0px 2px 0px #e0e0e0;
-}
-
-.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-    color: rgb(0, 58, 219)!important;
-}
-
-.mat-form-field-appearance-outline.mat-focused .mat-form-field-label {
-    color: rgb(70, 70, 70)!important;
-    font-weight: 600;
-}
-
-.mat-form-field-label {
-    color: #000000cc;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-}
-
-.mat-hint {
-    color: red !important;
-    font-weight: 600;
-}
-
-.mat-form-field-appearance-outline.mat-focused .mat-hint {
-    color: rgb(70, 70, 70)!important;
-    font-weight: 600;
-}
-
-#hint {
-    color: rgb(70, 70, 70) !important;
-}
-
-// mat-form-field //input
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
