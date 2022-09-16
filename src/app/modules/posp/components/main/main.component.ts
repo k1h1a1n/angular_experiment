@@ -68,13 +68,21 @@ export class MainComponent implements OnInit {
     this.savePospInput.EmailId1 = formData.email;
     this.savePospInput.Branch = formData.branch;
     this.savePospInput.Division = formData.division;
-    this.savePospInput.DOB = formData.dob;
+    // dob
+    let dob : Date | string;
+    dob = new Date(formData.dob).toISOString();
+    this.savePospInput.DOB = dob;
+    //dob
     this.savePospInput.CustType = formData.fundtype;
     this.savePospInput.Gender = formData.gender;
     this.savePospInput.STDCode = formData.stdcode;
     this.savePospInput.LandLine = formData.landline;
     this.savePospInput.EmailId2 = formData.email1;
-    this.savePospInput.MarrDate = formData.marrdate;
+    //marr date
+    let marrdate : Date | string;
+    marrdate = new Date(formData.marrdate).toISOString();
+    this.savePospInput.MarrDate = marrdate;
+    //marr date
     this.savePospInput.DOCode = formData.docode;
     this.savePospInput.SerProvID = formData.provid;
     this.savePospInput.POSPCode = formData.pospcode;
