@@ -33,7 +33,7 @@ export class MainComponent implements OnInit {
       branch: new FormControl(),
       division: new FormControl('', [Validators.required]),
       dob: new FormControl('', [Validators.required]),
-      fundtype: new FormControl(2),
+      fundtype: new FormControl("2"),
       gender: new FormControl('M'),
       stdcode: new FormControl('',[]),
       landline: new FormControl('', []),
