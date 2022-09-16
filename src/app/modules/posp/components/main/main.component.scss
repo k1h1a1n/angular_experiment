@@ -1,0 +1,65 @@
+.custommargin {
+    margin:0 6% 0 6%
+}
+.inlinetoggleheading{
+    padding-right: 8%;
+    align-self: center;
+    font-weight: 600;
+    font-size: 13px;
+}
+.slecttoggle{
+    display: flex;
+    margin: 6px 0px 0px 6px;
+}
+.colgap{
+    column-gap: 8%;
+}
+
+
+.formBlueBTN {
+    /* float: left; */
+    padding: 0px 6px;
+    font-size: 12px;
+    min-width: 120px;
+    width: auto !important;
+    background: transparent;
+    color: #000000 !important;
+    border: 1px solid #F1772E !important;
+    border-radius: 5px;
+    line-height: 30px;
+    height: auto;
+    cursor: pointer;
+    background-repeat: no-repeat !important;
+    background-size: 20px !important;
+    background-position: 10px 5px !important;
+    padding-left: 38px;
+    padding-right: 22px;
+    text-align: center;
+    margin-left: 7px;
+    margin-right: 7px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.formBlueBTN:hover {
+    color: #ffffff !important;
+    background-color: #F1772E !important;
+    background-position: 10px -17px !important;
+    text-decoration: none;
+}
+
+.BtnRight{
+    margin-top: 15px;
+}
+
+.customheader1{
+    color: #309BAE;
+    font-size: 20px;
+}
+.customheader2{
+    font-size: 16px;
+}
