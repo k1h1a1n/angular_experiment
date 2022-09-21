@@ -1,5 +1,5 @@
 .custommargin {
-    margin:0 6% 0 6%
+    margin:2% 6% 0 6%;
 }
 .inlinetoggleheading{
     padding-right: 8%;
@@ -12,7 +12,7 @@
     margin: 6px 0px 0px 6px;
 }
 .colgap{
-    column-gap: 8%;
+    column-gap: 2%;
 }
 
 
@@ -55,11 +55,30 @@
 .BtnRight{
     margin-top: 15px;
 }
-
-.customheader1{
-    color: #309BAE;
-    font-size: 20px;
+.headerleft{
+    height: 32px;
+    .customheader1{
+        color: #309BAE;
+        font-size: 20px;
+        letter-spacing: 4px;
+        font-weight: 600;
+    }
 }
-.customheader2{
-    font-size: 16px;
+.nonrequiredHint{
+    color: black !important;
+    letter-spacing: 0.8px;
+}
+
+fieldset{
+    margin-bottom: 50px;
+    box-shadow: 2px 0px 2px -1px;
+    border: 1px solid #e0e0e0;
+    padding : 20px;
+    legend{
+        padding: 5px;
+        letter-spacing: 4px;
+        font-weight: 600;
+        box-shadow: 0px 0px 4px 1px #e0e0e0;
+        background: #8fd0a0
+    };
 }

@@ -101,11 +101,11 @@ $input-background: rgb(255, 248, 248);
 // Validation Error message
 // mat-form-field //input
 .mat-form-field-appearance-outline {
-    width: 100%;
+    width: 90%;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
-    height: 42px;
+    height: 40px;
 }
 
 .mat-form-field-subscript-wrapper {
@@ -140,15 +140,18 @@ $input-background: rgb(255, 248, 248);
     color: #000000cc;
     font-weight: 600 !important;
     font-size: 13px !important;
+    letter-spacing: 1px;
 }
 
 .mat-hint {
     color: red !important;
     font-weight: 600;
+    letter-spacing: 0.8px;
 }
 
 #hint {
     color: rgb(70, 70, 70) !important;
+    letter-spacing: 0.8px;
 }
 
 .mat-form-field-appearance-outline.mat-focused .mat-hint {

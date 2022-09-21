@@ -26,14 +26,14 @@ export class MainComponent implements OnInit {
       pincode: new FormControl('', [Validators.required]),
       city: new FormControl('', [Validators.required]),
       add1: new FormControl('', [Validators.required]),
-      add2: new FormControl('', [Validators.required]),
-      add3: new FormControl('', [Validators.required]),
+      add2: new FormControl('', []),
+      add3: new FormControl('', []),
       mobile: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       branch: new FormControl(),
-      division: new FormControl('', [Validators.required]),
+      division: new FormControl('', []),
       dob: new FormControl('', [Validators.required]),
-      fundtype: new FormControl("2"),
+      custtype: new FormControl("2"),
       gender: new FormControl('M'),
       stdcode: new FormControl('',[]),
       landline: new FormControl('', []),
@@ -41,7 +41,7 @@ export class MainComponent implements OnInit {
       marrdate: new FormControl('', []),
       docode: new FormControl('', []),
       provid: new FormControl('', [Validators.required]),
-      pospcode:new FormControl('' , [Validators.required])      
+      refcode:new FormControl('' , [Validators.required])      
     });
   }
   get controller(): { [key: string]: AbstractControl } {
@@ -79,9 +79,9 @@ export class MainComponent implements OnInit {
     this.savePospInput.LandLine = formData.landline;
     this.savePospInput.EmailId2 = formData.email1;
     //marr date
-    let marrdate : Date | string;
-    marrdate = new Date(formData.marrdate).toISOString();
-    this.savePospInput.MarrDate = marrdate;
+    // let marrdate : Date | string;
+    // marrdate = new Date(formData.marrdate).toISOString();
+    this.savePospInput.MarrDate = '';
     //marr date
     this.savePospInput.DOCode = formData.docode;
     this.savePospInput.SerProvID = formData.provid;

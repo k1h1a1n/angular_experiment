@@ -1,619 +1,561 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<form  
-        [formGroup]="pospForm"
-        (ngSubmit)="onSubmit(pospForm.value)"
-        autocomplete="off"
-      >
-<div class=" overflow-hidden bg-white  sm:rounded-lg" >
-  <div class="px-4 py-5 sm:px-6 flex justify-between">
-    <div>
-        <h3 class="text-lg font-medium leading-6 text-gray-900 customheader1">POSP Details</h3>
-        <p class="mt-1 max-w-2xl text-sm text-gray-500 customheader2">
-          Personal details and application.
-        </p>
+<form
+  [formGroup]="pospForm"
+  (ngSubmit)="onSubmit(pospForm.value)"
+  autocomplete="off"
+>
+  <div class=" backgroundGradient overflow-hidden bg-white sm:rounded-lg">
+    <div class="px-4 py-5 sm:px-6 flex justify-between items-baseline">
+      <div class="headerleft">
+        <h3 class="text-lg font-medium leading-6 text-gray-900 customheader1">
+          View Customer Registration
+        </h3>
+      </div>
+      <div class="BtnRight">
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+          class="formBlueBTN"
+          style="
+            width: 85px;
+            background-image: url(assets/images/save_BTN.png);
+            box-shadow: 1px 1px 2px 0px #f1772e;
+          "
+        />
+        <input
+          type="reset"
+          name="reset"
+          class="formBlueBTN"
+          style="
+            width: 93px;
+            background-image: url(assets/images/reset_BTN.png);
+            box-shadow: 1px 1px 2px 0px #f1772e;
+          "
+        />
+      </div>
     </div>
-    <div class="BtnRight">
-      <input
-        type="submit"
-        name="submit"
-        value="Submit"
-        class="formBlueBTN"
-        style="width: 85px; background-image: url(assets/images/save_BTN.png);box-shadow: 1px 1px 2px 0px #f1772e;"
-      />
-      <input
-        type="reset"
-        name="reset"
-        class="formBlueBTN"
-        style="width: 93px; background-image: url(assets/images/reset_BTN.png);box-shadow: 1px 1px 2px 0px #f1772e;"
-      />
-    </div>
-  </div>
-  <div class="border-t border-gray-200">
-    <dl>
+    <div class="border-t border-gray-500">
         <div class="overflow-hidden sm:rounded-md custommargin">
-          <div class="bg-white px-4 py-5 sm:p-6">
-            <div class="grid grid-cols-9 gap-6 colgap">
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>First Name</mat-label>
-                  <input formControlName="firstname" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['firstname'].untouched &&
-                      controller['firstname'].invalid &&
-                      controller['firstname'].pristine
-                    "
-                    >Ex : Your Name</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['firstname'].dirty &&
-                      controller['firstname'].valid
-                    "
-                    >Ex : Your Name</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['firstname'].invalid &&
-                      (controller['firstname'].dirty ||
-                        controller['firstname'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Middle Name</mat-label>
-                  <input formControlName="middlename" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['middlename'].untouched &&
-                      controller['middlename'].invalid &&
-                      controller['middlename'].pristine
-                    "
-                    >Ex : Father Name</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['middlename'].dirty &&
-                      controller['middlename'].valid
-                    "
-                    >Ex : Father Name</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['middlename'].invalid &&
-                      (controller['middlename'].dirty ||
-                        controller['middlename'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Last Name</mat-label>
-                  <input formControlName="lastname" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['lastname'].untouched &&
-                      controller['lastname'].invalid &&
-                      controller['lastname'].pristine
-                    "
-                    >Ex : Sur Name</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['lastname'].dirty &&
-                      controller['lastname'].valid
-                    "
-                    >Ex : Sur Name</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['lastname'].invalid &&
-                      (controller['lastname'].dirty ||
-                        controller['lastname'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Company Name</mat-label>
-                  <input formControlName="companyname" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['companyname'].untouched &&
-                      controller['companyname'].invalid &&
-                      controller['companyname'].pristine
-                    "
-                  >
-                    Ex : Datacomm pvt ltd.</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['companyname'].dirty &&
-                      controller['companyname'].valid
-                    "
-                    >Ex : Datacomm pvt ltd.</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['companyname'].invalid &&
-                      (controller['companyname'].dirty ||
-                        controller['companyname'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Pincode</mat-label>
-                  <input formControlName="pincode" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['pincode'].untouched &&
-                      controller['pincode'].invalid &&
-                      controller['pincode'].pristine
-                    "
-                    >Ex : 400037</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['pincode'].dirty && controller['pincode'].valid
-                    "
-                    >Ex : 400037</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['pincode'].invalid &&
-                      (controller['pincode'].dirty ||
-                        controller['pincode'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>city</mat-label>
-                  <input formControlName="city" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['city'].untouched &&
-                      controller['city'].invalid &&
-                      controller['city'].pristine
-                    "
-                    >Ex : Mumbai</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="controller['city'].dirty && controller['city'].valid"
-                    >Ex : Mumbai</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['city'].invalid &&
-                      (controller['city'].dirty || controller['city'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Address 1</mat-label>
-                  <input formControlName="add1" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['add1'].untouched &&
-                      controller['add1'].invalid &&
-                      controller['add1'].pristine
-                    "
-                    >Ex : Room no , compound name</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="controller['add1'].dirty && controller['add1'].valid"
-                    >Ex : Room no , compound name</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['add1'].invalid &&
-                      (controller['add1'].dirty || controller['add1'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Address 2</mat-label>
-                  <input formControlName="add2" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['add2'].untouched &&
-                      controller['add2'].invalid &&
-                      controller['add2'].pristine
-                    "
-                    >Ex : street , landmark
-                  </mat-hint>
-                  <mat-hint
-                    id="hint"
-                    *ngIf="controller['add2'].dirty && controller['add2'].valid"
-                    >Ex : street , landmark
-                  </mat-hint>
-                  <mat-hint
-                    *ngIf="
-                      controller['add2'].invalid &&
-                      (controller['add2'].dirty || controller['add2'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Address 3</mat-label>
-                  <input formControlName="add3" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['add3'].untouched &&
-                      controller['add3'].invalid &&
-                      controller['add3'].pristine
-                    "
-                    >Ex : Sector , east ,west etc.</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="controller['add3'].dirty && controller['add3'].valid"
-                    >Ex : Sector , east ,west etc.</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['add3'].invalid &&
-                      (controller['add3'].dirty || controller['add3'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Mobile</mat-label>
-                  <input formControlName="mobile" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['mobile'].untouched &&
-                      controller['mobile'].invalid &&
-                      controller['mobile'].pristine
-                    "
-                    >Ex : 9732434556</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['mobile'].dirty && controller['mobile'].valid
-                    "
-                    >Ex : 9732434556</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['mobile'].invalid &&
-                      (controller['mobile'].dirty ||
-                        controller['mobile'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Email</mat-label>
-                  <input formControlName="email" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['email'].untouched &&
-                      controller['email'].invalid &&
-                      controller['email'].pristine
-                    "
-                    >Ex : example@gmail.com</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['email'].dirty && controller['email'].valid
-                    "
-                    >Ex : example@gmail.com</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['email'].invalid &&
-                      (controller['email'].dirty || controller['email'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Branch</mat-label>
-                  <mat-select formControlName="branch">
-                    <mat-option value="91N">91N</mat-option>
-                    <mat-option value="91N">91B</mat-option>
-                  </mat-select>
-                  <mat-hint style="color: black !important">
-                    Select Branch
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Division</mat-label>
-                  <input formControlName="division" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['division'].untouched &&
-                      controller['division'].invalid &&
-                      controller['division'].pristine
-                    "
-                    >Ex : A , B etc.</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['division'].dirty &&
-                      controller['division'].valid
-                    "
-                    >Ex : A, B etc.</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['division'].invalid &&
-                      (controller['division'].dirty ||
-                        controller['division'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Date of Birth</mat-label>
-                  <input
-                    formControlName="dob"
-                    matInput
-                    [matDatepicker]="dob"
-                    readonly
-                  />
-                  <mat-hint
-                    *ngIf="
-                      controller['dob'].invalid &&
-                      (controller['dob'].dirty || controller['dob'].touched)
-                    "
-                  >
-                    Required
-                  </mat-hint>
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['dob'].untouched &&
-                      controller['dob'].invalid &&
-                      controller['dob'].pristine
-                    "
-                    >Click on icon to select date</mat-hint
-                  >
-                  <mat-datepicker-toggle
-                    matSuffix
-                    [for]="dob"
-                  ></mat-datepicker-toggle>
-                  <mat-datepicker touchUi #dob></mat-datepicker>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <div class="slecttoggle">
-                  <p class="inlinetoggleheading">Fund Type :</p>
-                  <mat-button-toggle-group
-                    formControlName="fundtype"
-                    class="mat-button-toggle-checked"
-                    appearance="legacy"
-                  >
-                    <mat-button-toggle checked
-                      >Normal</mat-button-toggle
+
+            <!-- Basic Details -->
+            <fieldset>
+              <legend>Basic Details</legend>
+            <div class="grid grid-cols-9 gap-6 colgap customername">
+                <div class="col-span-4 sm:col-span-3">
+                  <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input formControlName="firstname" matInput />
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['firstname'].untouched &&
+                        controller['firstname'].invalid &&
+                        controller['firstname'].pristine
+                      "
+                      >Ex : Your Name</mat-hint
                     >
-                    <mat-button-toggle value="4">POSP</mat-button-toggle>
-                  </mat-button-toggle-group>
-                </div>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <div class="slecttoggle">
-                  <p class="inlinetoggleheading">Gender :</p>
-                  <mat-button-toggle-group
-                    formControlName="gender" value="M"
-                    class="mat-button-toggle-checked"
-                    appearance="legacy"
-                  >
-                    <mat-button-toggle checked
-                      >Male</mat-button-toggle
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['firstname'].dirty &&
+                        controller['firstname'].valid
+                      "
+                      >Ex : Your Name</mat-hint
                     >
-                    <mat-button-toggle value='F'>Female</mat-button-toggle>
-                  </mat-button-toggle-group>
+                    <mat-hint
+                      *ngIf="
+                        controller['firstname'].invalid &&
+                        (controller['firstname'].dirty ||
+                          controller['firstname'].touched)
+                      "
+                    >
+                      Required field
+                    </mat-hint>
+                  </mat-form-field>
                 </div>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>S.T.D Code</mat-label>
-                  <input formControlName="stdcode" matInput />
-                  <mat-hint
-                  style="color: black !important"
-                    >Ex : 022 , 023 ,etc.
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Landline</mat-label>
-                  <input formControlName="landline" matInput />
-                  <mat-hint
-                  style="color: black !important"
-                    >Ex : Your Landline number.</mat-hint
-                  >
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Email Id</mat-label>
-                  <input formControlName="email1" matInput />
-                  <mat-hint
-                  style="color: black !important"
-                    >Ex : example@gmail.com.</mat-hint
-                  >
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Marriage date</mat-label>
-                  <input
-                    formControlName="marrdate"
-                    matInput
-                    [matDatepicker]="marrdate"
-                    readonly
-                  />
-                  <mat-hint
-                    *ngIf="
-                      controller['marrdate'].invalid &&
-                      (controller['marrdate'].dirty ||
-                        controller['marrdate'].touched)
-                    "
-                  >
-                    Required
-                  </mat-hint>
-                  <mat-hint
-                  style="color: black !important"
-                    >Click on icon to select date</mat-hint
-                  >
-                  <mat-datepicker-toggle
-                    matSuffix
-                    [for]="marrdate"
-                  ></mat-datepicker-toggle>
-                  <mat-datepicker touchUi #marrdate></mat-datepicker>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>D.O Code</mat-label>
-                  <input formControlName="docode" matInput />
-                  <mat-hint
-                  style="color: black !important"
-                    >Ex : Your D.O code.</mat-hint
-                  >
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>Ser Prov ID</mat-label>
-                  <input formControlName="provid" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['provid'].untouched &&
-                      controller['provid'].invalid &&
-                      controller['provid'].pristine
-                    "
-                    >Ex : Your Prov Id.</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['provid'].dirty && controller['provid'].valid
-                    "
-                    >Ex : Your Prov Id</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['provid'].invalid &&
-                      (controller['provid'].dirty ||
-                        controller['provid'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
-              <div class="col-span-4 sm:col-span-3">
-                <mat-form-field appearance="outline">
-                  <mat-label>P.O.S.P Code</mat-label>
-                  <input formControlName="pospcode" matInput />
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['pospcode'].untouched &&
-                      controller['pospcode'].invalid &&
-                      controller['pospcode'].pristine
-                    "
-                    >Ex : Your P.O.S.P code</mat-hint
-                  >
-                  <mat-hint
-                    id="hint"
-                    *ngIf="
-                      controller['pospcode'].dirty &&
-                      controller['pospcode'].valid
-                    "
-                    >Ex : Your P.O.S.P code</mat-hint
-                  >
-                  <mat-hint
-                    *ngIf="
-                      controller['pospcode'].invalid &&
-                      (controller['pospcode'].dirty ||
-                        controller['pospcode'].touched)
-                    "
-                  >
-                    Required field
-                  </mat-hint>
-                </mat-form-field>
-              </div>
+                <div class="col-span-4 sm:col-span-3">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Middle Name</mat-label>
+                    <input formControlName="middlename" matInput />
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['middlename'].untouched &&
+                        controller['middlename'].invalid &&
+                        controller['middlename'].pristine
+                      "
+                      >Ex : Father Name</mat-hint
+                    >
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['middlename'].dirty &&
+                        controller['middlename'].valid
+                      "
+                      >Ex : Father Name</mat-hint
+                    >
+                    <mat-hint
+                      *ngIf="
+                        controller['middlename'].invalid &&
+                        (controller['middlename'].dirty ||
+                          controller['middlename'].touched)
+                      "
+                    >
+                      Required field
+                    </mat-hint>
+                  </mat-form-field>
+                </div>
+                <div class="col-span-4 sm:col-span-3">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input formControlName="lastname" matInput />
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['lastname'].untouched &&
+                        controller['lastname'].invalid &&
+                        controller['lastname'].pristine
+                      "
+                      >Ex : Sur Name</mat-hint
+                    >
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['lastname'].dirty &&
+                        controller['lastname'].valid
+                      "
+                      >Ex : Sur Name</mat-hint
+                    >
+                    <mat-hint
+                      *ngIf="
+                        controller['lastname'].invalid &&
+                        (controller['lastname'].dirty ||
+                          controller['lastname'].touched)
+                      "
+                    >
+                      Required field
+                    </mat-hint>
+                  </mat-form-field>
+                </div>
+                
+                <div class="col-span-4 sm:col-span-3">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input
+                      formControlName="dob"
+                      matInput
+                      [matDatepicker]="dob"
+                      readonly
+                    />
+                    <mat-hint
+                      *ngIf="
+                        controller['dob'].invalid &&
+                        (controller['dob'].dirty || controller['dob'].touched)
+                      "
+                    >
+                      Required
+                    </mat-hint>
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['dob'].untouched &&
+                        controller['dob'].invalid &&
+                        controller['dob'].pristine
+                      "
+                      >Click on icon to select date</mat-hint
+                    >
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="dob"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #dob></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                
+                <div class="col-span-4 sm:col-span-3">
+                  <div class="slecttoggle">
+                    <p class="inlinetoggleheading">Gender :</p>
+                    <mat-button-toggle-group
+                      formControlName="gender"
+                      value="M"
+                      class="mat-button-toggle-checked"
+                      appearance="legacy"
+                    >
+                      <mat-button-toggle checked>Male</mat-button-toggle>
+                      <mat-button-toggle value="F">Female</mat-button-toggle>
+                      <mat-button-toggle value="O">Other</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </div>
+                </div>
+                <div class="col-span-4 sm:col-span-3">
+                  <div class="slecttoggle">
+                    <p class="inlinetoggleheading">Custoner Type :</p>
+                    <mat-button-toggle-group
+                      formControlName="custtype"
+                      class="mat-button-toggle-checked"
+                      appearance="legacy"
+                      #custType
+                    >
+                      <mat-button-toggle checked>Normal</mat-button-toggle>
+                      <mat-button-toggle value="4">Other</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </div>
+                </div>
+                <div class="col-span-4 sm:col-span-3">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Mobile</mat-label>
+                    <input formControlName="mobile" matInput />
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['mobile'].untouched &&
+                        controller['mobile'].invalid &&
+                        controller['mobile'].pristine
+                      "
+                      >Ex : 9732434556</mat-hint
+                    >
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['mobile'].dirty && controller['mobile'].valid
+                      "
+                      >Ex : 9732434556</mat-hint
+                    >
+                    <mat-hint
+                      *ngIf="
+                        controller['mobile'].invalid &&
+                        (controller['mobile'].dirty ||
+                          controller['mobile'].touched)
+                      "
+                    >
+                      Required field
+                    </mat-hint>
+                  </mat-form-field>
+                </div>
+                <div class="col-span-4 sm:col-span-3">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput />
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['email'].untouched &&
+                        controller['email'].invalid &&
+                        controller['email'].pristine
+                      "
+                      >Ex : example@gmail.com</mat-hint
+                    >
+                    <mat-hint
+                      id="hint"
+                      *ngIf="
+                        controller['email'].dirty && controller['email'].valid
+                      "
+                      >Ex : example@gmail.com</mat-hint
+                    >
+                    <mat-hint
+                      *ngIf="
+                        controller['email'].invalid &&
+                        (controller['email'].dirty || controller['email'].touched)
+                      "
+                    >
+                      Required field
+                    </mat-hint>
+                  </mat-form-field>
+                </div>
+
             </div>
-          </div>
+            </fieldset>
+              <!-- Basic Details -->
+
+              <!-- Street Address -->
+              <fieldset>
+                <legend>Street Address</legend>
+                <div class="grid grid-cols-9 gap-6 colgap">
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Address 1</mat-label>
+                      <input formControlName="add1" matInput />
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['add1'].untouched &&
+                          controller['add1'].invalid &&
+                          controller['add1'].pristine
+                        "
+                        >Ex : Room no , compound name</mat-hint
+                      >
+                      <mat-hint
+                        id="hint"
+                        *ngIf="controller['add1'].dirty && controller['add1'].valid"
+                        >Ex : Room no , compound name</mat-hint
+                      >
+                      <mat-hint
+                        *ngIf="
+                          controller['add1'].invalid &&
+                          (controller['add1'].dirty || controller['add1'].touched)
+                        "
+                      >
+                        Required field
+                      </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Address 2</mat-label>
+                      <input formControlName="add2" matInput />
+                      <mat-hint class="nonrequiredHint"
+                        >Ex : street , landmark
+                      </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Address 3</mat-label>
+                      <input formControlName="add3" matInput />
+                      <mat-hint class="nonrequiredHint"
+                        >Ex : Sector , east ,west etc.</mat-hint
+                      >
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Pincode</mat-label>
+                      <input formControlName="pincode" matInput />
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['pincode'].untouched &&
+                          controller['pincode'].invalid &&
+                          controller['pincode'].pristine
+                        "
+                        >Ex : 400037</mat-hint
+                      >
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['pincode'].dirty && controller['pincode'].valid
+                        "
+                        >Ex : 400037</mat-hint
+                      >
+                      <mat-hint
+                        *ngIf="
+                          controller['pincode'].invalid &&
+                          (controller['pincode'].dirty ||
+                            controller['pincode'].touched)
+                        "
+                      >
+                        Required field
+                      </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Division</mat-label>
+                      <input formControlName="division" matInput />
+                      <mat-hint class="nonrequiredHint">Ex : A , B etc.</mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>city</mat-label>
+                      <input formControlName="city" matInput />
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['city'].untouched &&
+                          controller['city'].invalid &&
+                          controller['city'].pristine
+                        "
+                        >Ex : Mumbai</mat-hint
+                      >
+                      <mat-hint
+                        id="hint"
+                        *ngIf="controller['city'].dirty && controller['city'].valid"
+                        >Ex : Mumbai</mat-hint
+                      >
+                      <mat-hint
+                        *ngIf="
+                          controller['city'].invalid &&
+                          (controller['city'].dirty || controller['city'].touched)
+                        "
+                      >
+                        Required field
+                      </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Branch</mat-label>
+                      <mat-select formControlName="branch">
+                        <mat-option value="91N">91N</mat-option>
+                        <mat-option value="91N">91B</mat-option>
+                      </mat-select>
+                      <mat-hint class="nonrequiredHint"> Select Branch </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Landline</mat-label>
+                      <input formControlName="landline" matInput />
+                      <mat-hint class="nonrequiredHint"
+                        >Ex : Your Landline number.</mat-hint
+                      >
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>D.O Code</mat-label>
+                      <input formControlName="docode" matInput />
+                      <mat-hint class="nonrequiredHint"
+                        >Ex : Your D.O code.</mat-hint
+                      >
+                    </mat-form-field>
+                  </div>
+                </div>
+                </fieldset>
+              <!-- Street Address -->
+
+              <!-- Additional Details -->
+              <fieldset>
+                <legend>Additional Details</legend>
+                <div class="grid grid-cols-9 gap-6 colgap">
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Company Name</mat-label>
+                      <input formControlName="companyname" matInput />
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['companyname'].untouched &&
+                          controller['companyname'].invalid &&
+                          controller['companyname'].pristine
+                        "
+                      >
+                        Ex : Datacomm pvt ltd.</mat-hint
+                      >
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['companyname'].dirty &&
+                          controller['companyname'].valid
+                        "
+                        >Ex : Datacomm pvt ltd.</mat-hint
+                      >
+                      <mat-hint
+                        *ngIf="
+                          controller['companyname'].invalid &&
+                          (controller['companyname'].dirty ||
+                            controller['companyname'].touched)
+                        "
+                      >
+                        Required field
+                      </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Email Id</mat-label>
+                      <input formControlName="email1" matInput />
+                      <mat-hint class="nonrequiredHint"
+                        >Ex : example@gmail.com.</mat-hint
+                      >
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Marriage date</mat-label>
+                      <input
+                        formControlName="marrdate"
+                        matInput
+                        [matDatepicker]="marrdate"
+                        readonly
+                      />
+                      <mat-hint
+                        *ngIf="
+                          controller['marrdate'].invalid &&
+                          (controller['marrdate'].dirty ||
+                            controller['marrdate'].touched)
+                        "
+                      >
+                        Required
+                      </mat-hint>
+                      <mat-hint class="nonrequiredHint"
+                        >Click on icon to select date</mat-hint
+                      >
+                      <mat-datepicker-toggle
+                        matSuffix
+                        [for]="marrdate"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker touchUi #marrdate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Ser Prov ID</mat-label>
+                      <input formControlName="provid" matInput />
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['provid'].untouched &&
+                          controller['provid'].invalid &&
+                          controller['provid'].pristine
+                        "
+                        >Ex : Your Prov Id.</mat-hint
+                      >
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['provid'].dirty && controller['provid'].valid
+                        "
+                        >Ex : Your Prov Id</mat-hint
+                      >
+                      <mat-hint
+                        *ngIf="
+                          controller['provid'].invalid &&
+                          (controller['provid'].dirty ||
+                            controller['provid'].touched)
+                        "
+                      >
+                        Required field
+                      </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-span-4 sm:col-span-3" *ngIf="custType">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Refe. Code</mat-label>
+                      <input formControlName="refcode" matInput />
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['refcode'].untouched &&
+                          controller['refcode'].invalid &&
+                          controller['refcode'].pristine
+                        "
+                        >Ex : Your Refe. code</mat-hint
+                      >
+                      <mat-hint
+                        id="hint"
+                        *ngIf="
+                          controller['refcode'].dirty && controller['refcode'].valid
+                        "
+                        >Ex : Your Refe. code</mat-hint
+                      >
+                      <mat-hint
+                        *ngIf="
+                          controller['refcode'].invalid &&
+                          (controller['refcode'].dirty ||
+                            controller['refcode'].touched)
+                        "
+                      >
+                        Required field
+                      </mat-hint>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- Additional Details -->
         </div>
-    </dl>
+    </div>
   </div>
-</div>
 </form>
-<div class="mt-10 sm:mt-0">
-  <div class="md:grid md:grid-cols-3 md:gap-6">
-    <div class="mt-5 md:col-span-2 md:mt-0"></div>
-  </div>
-</div>
