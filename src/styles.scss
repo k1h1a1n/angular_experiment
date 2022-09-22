@@ -69,9 +69,11 @@ mat-button-toggle-group {
     mat-button-toggle {
         border-radius: 4px;
         font-size: 14px;
+
     }
     .mat-button-toggle-label-content {
         line-height: 34px;
+        letter-spacing: 1px;
     }
     .mat-button-toggle-checked {
         background-color: $tab-background;
@@ -157,6 +159,7 @@ $input-background: rgb(255, 248, 248);
 .mat-form-field-appearance-outline.mat-focused .mat-hint {
     color: rgb(70, 70, 70)!important;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 

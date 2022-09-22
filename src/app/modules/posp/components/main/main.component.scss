@@ -1,5 +1,5 @@
 .custommargin {
-    margin:2% 6% 0 6%;
+    margin:4% 6% 0 6%;
 }
 .inlinetoggleheading{
     padding-right: 8%;
@@ -14,7 +14,6 @@
 .colgap{
     column-gap: 2%;
 }
-
 
 .formBlueBTN {
     /* float: left; */
@@ -71,14 +70,17 @@
 
 fieldset{
     margin-bottom: 50px;
-    box-shadow: 2px 0px 2px -1px;
+    box-shadow: 0px 0px 2px 0px;
     border: 1px solid #e0e0e0;
     padding : 20px;
     legend{
         padding: 5px;
         letter-spacing: 4px;
         font-weight: 600;
-        box-shadow: 0px 0px 4px 1px #e0e0e0;
+        box-shadow: 0px 0px 4px 2px #000000;
         background: #8fd0a0
     };
+}
+.headershadow{
+    box-shadow: 0px 2px 8px 2px rgb(0 0 0 / 81%);;
 }
